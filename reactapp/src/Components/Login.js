@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 
 function Login() {
@@ -21,34 +21,34 @@ function Login() {
       return;
     }
     try {
-      const res = await axios.post("http://localhost:9000/user/login", form);
-      const response = res.data;
-      if (response.success) {
-        // Store user info in localStorage for session management
-        localStorage.setItem(
-          "user",
-          JSON.stringify({
-            email: response.email,
-            username: response.username,
-            role: response.role,
-          })
-        );
-        if (response.role === "ADMIN") {
-          alert(
-            `Welcome Admin ${response.username}! Redirecting to admin dashboard...`
-          );
-          // Redirect to admin dashboard
-          window.location.href = "/product-management";
-        } else if (response.role === "USER") {
-          alert(
-            `Welcome ${response.username}! Redirecting to user dashboard...`
-          );
-          // Redirect to user dashboard
-          window.location.href = "/product-list";
-        }
-      } else {
-        alert(response.message);
-      }
+    //   const res = await axios.post("http://localhost:9000/user/login", form);
+    //   const response = res.data;
+    //   if (response.success) {
+    //     // Store user info in localStorage for session management
+    //     localStorage.setItem(
+    //       "user",
+    //       JSON.stringify({
+    //         email: response.email,
+    //         username: response.username,
+    //         role: response.role,
+    //       })
+    //     );
+    //     if (response.role === "ADMIN") {
+    //       alert(
+    //         `Welcome Admin ${response.username}! Redirecting to admin dashboard...`
+    //       );
+    //       // Redirect to admin dashboard
+    //       window.location.href = "/product-management";
+    //     } else if (response.role === "USER") {
+    //       alert(
+    //         `Welcome ${response.username}! Redirecting to user dashboard...`
+    //       );
+    //       // Redirect to user dashboard
+    //       window.location.href = "/product-list";
+    //     }
+    //   } else {
+    //     alert(response.message);
+    //   }
     } catch (err) {
       alert("Login failed: " + (err.response?.data?.message || err.message));
     }
