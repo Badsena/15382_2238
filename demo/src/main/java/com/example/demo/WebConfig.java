@@ -11,8 +11,8 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")  // Or any other path you're concerned with
-                // .allowedOrigins("https://3000.vs.amypo.com")
-                .allowedOrigins("http://localhost:3000")
+                .allowedOrigins("https://3001.vs.amypo.com")
+                // .allowedOrigins("http://localhost:3000")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true); 

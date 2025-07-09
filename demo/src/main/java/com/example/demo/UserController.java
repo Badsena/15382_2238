@@ -7,7 +7,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001", "https://3000.vs.amypo.com"})
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001", "https://3001.vs.amypo.com"})
 public class UserController {
 
     @Autowired
@@ -53,4 +53,3 @@ public class UserController {
         return "Admin registered successfully";
     }
 }
-    
