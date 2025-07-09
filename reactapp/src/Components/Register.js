@@ -20,19 +20,19 @@ function Register() {
       return;
     }
     // Basic email format validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(form.email)) {
-      alert("Please enter a valid email address");
-      return;
-    }
+    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // if (!emailRegex.test(form.email)) {
+    //   alert("Please enter a valid email address");
+    //   return;
+    // }
     // Password strength validation
     if (form.password.length < 6) {
       alert("Password must be at least 6 characters long");
       return;
     }
     try {
-    //   const res = await axios.post("http://localhost:9000/user/register", form);
-    //   alert(res.data);
+      const res = await axios.post("https://9001.vs.amypo.com/user/register", form);
+      alert(res.data);
     } catch (err) {
       alert("Registration failed");
     }
